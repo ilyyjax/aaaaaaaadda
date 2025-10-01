@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEOW OR NEVER — Entertainment System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="topbar">
+      <div class="logo">
+        <div class="cat-eye"></div>
+        <span>MEOW ENTERTAINMENT SYSTEM</span>
+      </div>
+
+      <nav class="actions">
+        <button class="cta buy-btn" id="buyBtn">BUY $MEOW</button>
+        <button class="cta ghost" id="copyBtn" data-ca="0xYOUR_CONTRACT_ADDRESS_HERE">COPY CA</button>
+        <a class="link" id="dexLink" href="#" target="_blank">DEXSCREENER</a>
+        <a class="link" id="xLink" href="#" target="_blank">X / COMMUNITY</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero-left">
+          <h1 class="title">MEOW OR NEVER</h1>
+          <p class="subtitle">A playful gallery of MEOWs — adopt the vibe, not financial advice.</p>
+
+          <div class="info-cards">
+            <div class="card">
+              <div>Supply</div>
+              <div class="big">1,000,000,000</div>
+            </div>
+            <div class="card">
+              <div>Tax</div>
+              <div class="big">0 / 0</div>
+            </div>
+            <div class="card">
+              <div>Contract</div>
+              <div class="big contract" id="contractDisplay">0xYOUR_CONTRACT_ADDRESS_HERE</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="console">
+            <div class="screen">
+              <div class="screen-row">SELECT MEME</div>
+              <div class="screen-row small">MEOW #001</div>
+              <div class="screen-grid" id="memeGrid">
+                <!-- populated by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2>Featured MEOWs</h2>
+        <div class="grid" id="galleryGrid">
+          <!-- images via JS -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> MEOW OR NEVER</div>
+      <div class="foot-links">
+        <a href="#" target="_blank">Terms</a>
+        <a href="#" target="_blank">Privacy</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- BUY modal -->
+  <div class="modal hidden" id="buyModal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose">✕</button>
+      <h3>Buy $MEOW (Simulated)</h3>
+      <p>This demo does not perform real token purchases. Plug your wallet + swap provider here.</p>
+      <div class="form-row">
+        <label>Amount (ETH)</label>
+        <input id="buyAmount" type="number" min="0" step="0.01" placeholder="0.1" />
+      </div>
+      <div class="form-row">
+        <label>Estimated $MEOW</label>
+        <div id="estMeow">—</div>
+      </div>
+      <div class="modal-actions">
+        <button id="execBuy" class="cta">Simulate Buy</button>
+        <button id="cancelBuy" class="cta ghost">Cancel</button>
+      </div>
+      <small class="disclaimer">Never send funds to an address you don't trust. This is a front-end demo only.</small>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
